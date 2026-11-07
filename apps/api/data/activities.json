@@ -1,0 +1,98 @@
+[
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000001",
+    "title": "Cérémonie des couleurs",
+    "venue": "Place de l'Obélisque",
+    "starts_at": "2026-10-31T10:00:00.000Z",
+    "ends_at": "2026-10-31T12:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000002",
+    "title": "Parade des délégations",
+    "venue": "Corniche Ouest",
+    "starts_at": "2026-10-31T16:00:00.000Z",
+    "ends_at": "2026-10-31T18:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000003",
+    "title": "Atelier de percussions",
+    "venue": "Village des Jeux de Diamniadio",
+    "starts_at": "2026-11-02T15:00:00.000Z",
+    "ends_at": "2026-11-02T17:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000004",
+    "title": "Visite guidée de l'île",
+    "venue": "Île de Gorée",
+    "starts_at": "2026-11-03T09:00:00.000Z",
+    "ends_at": "2026-11-03T12:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000005",
+    "title": "Marché artisanal",
+    "venue": "Village des Jeux de Diamniadio",
+    "starts_at": "2026-11-05T10:00:00.000Z",
+    "ends_at": "2026-11-05T13:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000006",
+    "title": "Projection de films sur l'Afrique",
+    "venue": "Village des Jeux de Diamniadio",
+    "starts_at": "2026-11-05T14:00:00.000Z",
+    "ends_at": "2026-11-05T16:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000007",
+    "title": "Initiation à la lutte",
+    "venue": "Plage de Yoff",
+    "starts_at": "2026-11-05T15:00:00.000Z",
+    "ends_at": "2026-11-05T16:30:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000008",
+    "title": "Concert de sabar",
+    "venue": "Place de l'Obélisque",
+    "starts_at": "2026-11-05T18:00:00.000Z",
+    "ends_at": "2026-11-05T20:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000009",
+    "title": "Tournoi de beach soccer amateur",
+    "venue": "Plage de Yoff",
+    "starts_at": "2026-11-07T15:00:00.000Z",
+    "ends_at": "2026-11-07T18:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000010",
+    "title": "Dégustation de thiéboudiène",
+    "venue": "Village des Jeux de Diamniadio",
+    "starts_at": "2026-11-07T16:00:00.000Z",
+    "ends_at": "2026-11-07T19:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000011",
+    "title": "Soirée mbalax",
+    "venue": "Place de l'Obélisque",
+    "starts_at": "2026-11-10T19:00:00.000Z",
+    "ends_at": "2026-11-10T22:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "0199f5c3-0000-7000-8000-000000000012",
+    "title": "Fête de clôture des supporters",
+    "venue": "Village des Jeux de Diamniadio",
+    "starts_at": "2026-11-13T17:00:00.000Z",
+    "ends_at": "2026-11-13T20:00:00.000Z",
+    "created_at": "2026-10-01T08:00:00.000Z"
+  }
+]

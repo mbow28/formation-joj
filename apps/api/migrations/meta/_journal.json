@@ -15,6 +15,13 @@
       "when": 1794063511550,
       "tag": "0001_create_volunteer_slots",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794071307002,
+      "tag": "0002_create_activities",
+      "breakpoints": true
     }
   ]
 }
