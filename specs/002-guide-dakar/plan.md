@@ -64,7 +64,7 @@ Chaque scénario est prouvé au niveau le plus bas qui suffit, puis par l'e2e qu
 
 Cinq tâches, dans l'ordre des couches. Chaque tâche nomme le test à écrire d'abord et cite les scénarios qu'elle couvre ; elle tient dans un commit.
 
-- [ ] T01 [002-AS4] Écrire d'abord `packages/shared/src/activities.spec.ts` (« 002-AS4: rejects a missing, malformed or impossible date »), puis `packages/shared/src/activities.ts` et son export dans `index.ts`
+- [x] T01 [002-AS4] Écrire d'abord `packages/shared/src/activities.spec.ts` (« 002-AS4: rejects a missing, malformed or impossible date »), puis `packages/shared/src/activities.ts` et son export dans `index.ts`
 - [ ] T02 [002-AS1, AS3] Écrire d'abord `apps/api/src/modules/activities/domain/agenda.spec.ts` (« 002-AS1: sorts activities by start time then title », « 002-AS3: rejects a date outside the Games and accepts the first and last days »), puis `domain/activity.ts`, `domain/agenda.ts` et `domain/activities.errors.ts`
 - [ ] T03 [002-AS1, AS2, AS3] Écrire d'abord `application/activities.application.spec.ts` (« 002-AS1: lists only the activities of the day, sorted », « 002-AS2: returns an empty agenda for a day without activity »), puis le port `activity.repository.ts`, `testing/in-memory-activity.repository.ts` et `use-cases/list-daily-agenda.ts`
 - [ ] T04 [002-AS1, AS2] Écrire d'abord `infra/drizzle-activity.repository.int.spec.ts` (« 002-AS1: finds the activities starting on the given day only »), puis `infra/activities.schema.ts`, la migration `pnpm db:generate --name=create_activities`, `infra/activity.mapper.ts`, `infra/drizzle-activity.repository.ts` et `apps/api/data/activities.json`
