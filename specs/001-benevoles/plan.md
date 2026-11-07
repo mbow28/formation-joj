@@ -78,3 +78,11 @@ Cinq tâches, dans l'ordre des couches. Chaque tâche nomme le test à écrire d
 - [x] T03 [001-AS1, AS3, AS4, AS6, AS7] Écrire d'abord `application/volunteers.application.spec.ts` (« 001-AS3: refuses a slot in an unknown discipline », « 001-AS7: refuses a registration on an unknown slot »), puis le port `slot.repository.ts`, `testing/in-memory-slot.repository.ts`, `use-cases/open-slot.ts`, `use-cases/register-volunteer.ts`, et l'export de `GetDiscipline` par `disciplines.module.ts`
 - [x] T04 [001-AS1, AS4, AS6] Écrire d'abord `infra/drizzle-slot.repository.int.spec.ts` (« 001-AS6: accepts only one of two simultaneous registrations for the last place »), puis `infra/volunteers.schema.ts`, la migration `pnpm db:generate --name=create_volunteer_slots`, `infra/slot.mapper.ts` et `infra/drizzle-slot.repository.ts`
 - [x] T05 [001-AS1, AS2, AS3, AS4, AS5, AS6, AS7] Écrire d'abord `apps/api/test/volunteers.e2e.spec.ts` (« 001-AS6: refuses a third volunteer on a slot of capacity 2 (409 SLOT_FULL) »), puis `http/volunteers.controller.ts`, `volunteers.module.ts` et son import dans `src/app.module.ts`
+
+## 7. Corrections
+
+### Passage 1
+
+- [ ] T06 [001-AS2] Écrire d'abord, dans `packages/shared/src/volunteers.spec.ts` et `apps/api/test/volunteers.e2e.spec.ts`, le test « 001-AS2: rejects a capacity above the largest storable value (400 VALIDATION_FAILED) » avec `capacity: 2147483648`, puis borner la capacité à 2147483647 (la valeur maximale d'une colonne `integer`) dans `openSlotSchema` et dans `Slot.create()` (`SLOT_CAPACITY_INVALID`). Preuve du relecteur : `packages/shared/src/volunteers.ts:11` n'a pas de borne haute et `infra/volunteers.schema.ts:14` est un int4 ; l'API répond `500 INTERNAL_ERROR` (« value "2147483648" is out of range for type integer ») au lieu d'un refus 400.
+
+Écart non retenu, à trancher par l'humain : le relecteur signale comme hors périmètre le commit `215aabd` (route `GET /api/disciplines/:id/similaires`). Ce n'est pas un défaut de la spec 001 : c'est la tâche A de l'atelier A, commitée sur la branche après la spec et donc incluse dans le diff depuis la base `c9b80a1^`.
