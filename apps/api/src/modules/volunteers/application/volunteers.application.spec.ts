@@ -52,6 +52,19 @@ describe('volunteers (application layer)', () => {
     expect(await slots.findById(slot.id)).toEqual(slot);
   });
 
+  it('001-AS2: rejects an invalid slot and records nothing', async () => {
+    const { lutte, slots, openSlot } = await setup();
+
+    await expect(openSlot.execute(lutte.id, { ...SLOT, capacity: 0 })).rejects.toMatchObject({
+      code: 'SLOT_CAPACITY_INVALID',
+      kind: 'VALIDATION',
+    });
+    await expect(
+      openSlot.execute(lutte.id, { ...SLOT, endsAt: SLOT.startsAt }),
+    ).rejects.toMatchObject({ code: 'SLOT_ENDS_BEFORE_START', kind: 'VALIDATION' });
+    expect(slots.size).toBe(0);
+  });
+
   it('001-AS3: refuses a slot in an unknown discipline', async () => {
     const { slots, openSlot } = await setup();
 
