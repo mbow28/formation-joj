@@ -1,6 +1,6 @@
 # 002 — Guide de Dakar : voir l'agenda du jour
 
-**Statut** : Validée
+**Statut** : Implémentée
 **PRD** : specs/prd-guide-dakar.md, TR1
 
 ## Contexte
