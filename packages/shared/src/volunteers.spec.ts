@@ -27,6 +27,13 @@ describe('openSlotSchema', () => {
     },
   );
 
+  it('001-AS2: rejects a capacity above the largest storable value', () => {
+    const result = openSlotSchema.safeParse({ ...slot, capacity: 2_147_483_648 });
+    expect(result.success).toBe(false);
+    expect(result.error?.issues.map((issue) => issue.path.join('.'))).toEqual(['capacity']);
+    expect(openSlotSchema.parse({ ...slot, capacity: 2_147_483_647 }).capacity).toBe(2_147_483_647);
+  });
+
   it('001-AS2: accepts a capacity of 1', () => {
     expect(openSlotSchema.parse({ ...slot, capacity: 1 })).toEqual({ ...slot, capacity: 1 });
   });

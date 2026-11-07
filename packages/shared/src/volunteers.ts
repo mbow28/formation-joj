@@ -2,13 +2,15 @@ import { z } from 'zod';
 
 export const VOLUNTEER_NAME_MAX_LENGTH = 100;
 export const VOLUNTEER_EMAIL_MAX_LENGTH = 254;
+/** La plus grande valeur d'une colonne `integer` de Postgres, où la capacité est stockée. */
+export const SLOT_CAPACITY_MAX = 2_147_483_647;
 
 /** Corps de `POST /api/disciplines/:disciplineId/slots`. */
 export const openSlotSchema = z
   .object({
     startsAt: z.iso.datetime(),
     endsAt: z.iso.datetime(),
-    capacity: z.int().min(1),
+    capacity: z.int().min(1).max(SLOT_CAPACITY_MAX),
   })
   .refine((slot) => Date.parse(slot.endsAt) > Date.parse(slot.startsAt), {
     message: 'A slot ends after it starts',

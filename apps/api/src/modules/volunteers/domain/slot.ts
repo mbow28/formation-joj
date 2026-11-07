@@ -1,3 +1,4 @@
+import { SLOT_CAPACITY_MAX } from '@joj/shared';
 import { Registration } from './registration';
 import { SlotError, slotFull } from './volunteers.errors';
 
@@ -33,10 +34,12 @@ export class Slot {
 
   /** L'existence de la discipline est vérifiée par le cas d'usage. */
   static create({ id, disciplineId, startsAt, endsAt, capacity, now }: NewSlot): Slot {
-    if (!Number.isInteger(capacity) || capacity < 1) {
-      throw new SlotError('SLOT_CAPACITY_INVALID', 'A slot capacity is an integer of at least 1', {
-        capacity,
-      });
+    if (!Number.isInteger(capacity) || capacity < 1 || capacity > SLOT_CAPACITY_MAX) {
+      throw new SlotError(
+        'SLOT_CAPACITY_INVALID',
+        `A slot capacity is an integer between 1 and ${SLOT_CAPACITY_MAX}`,
+        { capacity },
+      );
     }
     if (endsAt.getTime() <= startsAt.getTime()) {
       throw new SlotError('SLOT_ENDS_BEFORE_START', 'A slot ends after it starts');

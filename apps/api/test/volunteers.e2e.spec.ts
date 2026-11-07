@@ -64,6 +64,16 @@ describe('slots and registrations (e2e)', () => {
     expect(response.body.errors).toEqual([expect.objectContaining({ path })]);
   });
 
+  it('001-AS2: rejects a capacity above the largest storable value (400 VALIDATION_FAILED)', async () => {
+    const response = await api()
+      .post(`/api/disciplines/${disciplineId}/slots`)
+      .send({ ...SLOT, capacity: 2_147_483_648 })
+      .expect(400);
+
+    expect(response.body).toMatchObject({ status: 400, code: 'VALIDATION_FAILED' });
+    expect(response.body.errors).toEqual([expect.objectContaining({ path: 'capacity' })]);
+  });
+
   it('001-AS2: accepts a capacity of 1', async () => {
     expect((await openSlot(1)).capacity).toBe(1);
   });

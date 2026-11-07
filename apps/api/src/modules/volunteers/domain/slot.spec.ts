@@ -43,7 +43,7 @@ describe('Slot', () => {
     });
   });
 
-  it.each([0, -1, 1.5])(
+  it.each([0, -1, 1.5, 2_147_483_648])(
     '001-AS2: rejects a capacity below 1 or not an integer (%j)',
     (capacity) => {
       expect(() => openSlot({ capacity })).toThrow(
