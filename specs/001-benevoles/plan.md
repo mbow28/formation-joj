@@ -92,3 +92,7 @@ Cinq tâches, dans l'ordre des couches. Chaque tâche nomme le test à écrire d
 - [x] T07 [001-AS2] Écrire d'abord, dans `apps/api/src/modules/volunteers/application/volunteers.application.spec.ts`, le test « 001-AS2: rejects an invalid slot and records nothing » : `openSlot.execute(lutte.id, …)` avec une capacité de 0, puis avec une fin égale au début, est rejeté (`SLOT_CAPACITY_INVALID`, `SLOT_ENDS_BEFORE_START`) et `slots.size` vaut 0 ; puis le code, si le test l'exige. Preuve du relecteur : aucun test de AS2 ne vérifie « aucun créneau n'est enregistré » (`application/volunteers.application.spec.ts` n'a pas de cas AS2, `apps/api/test/volunteers.e2e.spec.ts:50-80` ne vérifie que le refus).
 
 Écart toujours ouvert, à trancher par l'humain : le relecteur signale de nouveau comme hors périmètre le commit `215aabd` (route `GET /api/disciplines/:id/similaires`, tâche A de l'atelier A), présent dans le diff depuis la base `c9b80a1^`.
+
+### Décision humaine
+
+Écart `215aabd` accepté comme exception le 2026-11-07 : la route `GET /api/disciplines/:id/similaires` est un exercice indépendant (atelier A) et reste dans l'historique de la branche ; elle ne relève pas de la spec 001.
